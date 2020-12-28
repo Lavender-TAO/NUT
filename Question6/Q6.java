@@ -3,6 +3,11 @@ package solution;
 import java.awt.Point;
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Lavender
+ *
+ */
 public class Q6 {
 	
 	public static int maxY(ArrayList<Point> points) {
@@ -59,6 +64,12 @@ public class Q6 {
 		return min;
 	}
 	
+	/**
+	 * Calculate the slope of two points
+	 * @param p1
+	 * @param p2
+	 * @return
+	 */
 	public static double Slope(Point p1,Point p2) {
 		//make the difference double
 		double slope = (double)(p1.y-p2.y)/(p1.x-p2.x);
@@ -66,7 +77,12 @@ public class Q6 {
 	}
 	
 	
-		
+	/**
+	 * Check whether the point is inside the polygon
+	 * @param polygon
+	 * @param test
+	 * @return
+	 */
 	public static String InPoly(ArrayList<Point> polygon, Point test) {
 		String Y = "inside";
 		String N = "outside";
@@ -96,7 +112,6 @@ public class Q6 {
 			
 			//the point is between the edge
 			//xmin <= test.x <= xmax
-			//Math.min and Math.max is function provided by Java that find the min/max of two value
 			if(test.x >= Math.min(polygon.get(i).x,polygon.get(j).x)&& test.x <= Math.max(polygon.get(i).x,polygon.get(j).x)) {
 				//vertical, x is the same
 				if(polygon.get(i).x == polygon.get(j).x) {
